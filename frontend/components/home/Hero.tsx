@@ -61,29 +61,29 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="hero-anim-item text-4xl sm:text-5xl lg:text-[56px] font-black text-[#1F2937] leading-[1.12] tracking-tight mb-5">
+            <h1 className="hero-anim-item text-3xl sm:text-5xl lg:text-[56px] font-black text-[#1F2937] leading-[1.14] tracking-tight mb-5">
               I Build Websites &{' '}
               <span className="text-[#FF6B00] inline-block">Android Apps</span> That Grow Your Business
             </h1>
 
             {/* Subtitle Description */}
-            <p className="hero-anim-item text-base sm:text-lg text-[#6B7280] leading-relaxed max-w-xl mb-8">
+            <p className="hero-anim-item text-base sm:text-lg text-[#6B7280] leading-relaxed max-w-xl mb-7 sm:mb-8">
               Affordable, modern, responsive, and scalable digital solutions crafted with clean code and transparent pricing starting at just{' '}
               <span className="font-bold text-[#1F2937]">₹5,000</span>.
             </p>
 
             {/* CTA Buttons */}
-            <div className="hero-anim-item flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+            <div className="hero-anim-item flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-bold text-base shadow-lg shadow-[#FF6B00]/25 hover:shadow-xl hover:shadow-[#FF6B00]/35 hover:brightness-105 active:scale-98 transition-all"
+                className="hero-action-btn flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-bold text-base shadow-lg shadow-[#FF6B00]/25 hover:shadow-xl hover:shadow-[#FF6B00]/35 hover:brightness-105 active:scale-98 transition-all"
               >
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/portfolio"
-                className="flex items-center justify-center px-8 py-4 rounded-xl sm:rounded-2xl bg-white border-2 border-[#E5E7EB] text-[#1F2937] font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] active:scale-98 transition-all"
+                className="hero-action-btn flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white border-2 border-[#E5E7EB] text-[#1F2937] font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] active:scale-98 transition-all"
               >
                 View My Work
               </Link>
@@ -124,9 +124,9 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Interactive Code Illustration + Floating Badges */}
-          <div ref={rightColRef} className="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
+          <div ref={rightColRef} className="lg:col-span-5 relative flex flex-col items-center justify-center mt-4 lg:mt-0 w-full hero-right-column">
             {/* Outer Decorative Container */}
-            <div className="relative w-full max-w-lg p-4 sm:p-7 rounded-3xl bg-gradient-to-b from-[#FFF7ED] to-white border border-[#FFE0C2] shadow-sm">
+            <div className="relative w-full max-w-lg p-4 sm:p-7 rounded-3xl bg-gradient-to-b from-[#FFF7ED] to-white border border-[#FFE0C2] shadow-sm hero-code-card">
               {/* Floating Top-Right Pricing Badge (Desktop) */}
               <div className="hero-float-badge hidden sm:flex absolute -top-5 -right-4 z-20 items-center gap-3 bg-white px-4 py-2.5 rounded-2xl border border-[#FFE0C2] shadow-lg">
                 <div className="w-8 h-8 rounded-xl bg-[#FFF3E8] text-[#FF6B00] font-black flex items-center justify-center text-sm">
@@ -147,14 +147,35 @@ export default function Hero() {
                     <span className="w-3 h-3 rounded-full bg-[#F59E0B]" />
                     <span className="w-3 h-3 rounded-full bg-[#10B981]" />
                   </div>
-                  <span className="text-slate-400 text-xs font-sans tracking-wide">
+                  <span className="hidden sm:inline text-slate-400 text-xs font-sans tracking-wide">
                     jade-teja-project.tsx
                   </span>
-                  <div className="w-8" />
+                  <div className="hidden sm:block w-8" />
                 </div>
 
-                {/* Editor Code Content */}
-                <div className="p-5 sm:p-6 space-y-2 leading-relaxed">
+                {/* Mobile Code Content (matching 01-home-mobile.png) */}
+                <div className="sm:hidden p-4 space-y-2 leading-relaxed text-xs">
+                  <div className="text-slate-300">
+                    <span className="text-rose-400 font-semibold">const</span>{' '}
+                    <span className="text-sky-300">developer</span> = &#123;
+                  </div>
+                  <div className="pl-4 text-slate-300">
+                    <span className="text-slate-400">name:</span>{' '}
+                    <span className="text-emerald-300 font-bold">&apos;JADE TEJA&apos;</span>,
+                  </div>
+                  <div className="pl-4 text-slate-300">
+                    <span className="text-slate-400">role:</span>{' '}
+                    <span className="text-amber-300 font-medium">&apos;Web &amp; Android&apos;</span>,
+                  </div>
+                  <div className="pl-4 text-slate-300">
+                    <span className="text-slate-400">price:</span>{' '}
+                    <span className="text-emerald-400 font-bold">&apos;₹5,000 Starting&apos;</span>
+                  </div>
+                  <div className="text-slate-300">&#125;;</div>
+                </div>
+
+                {/* Desktop Code Content (matching 01-home-desktop.png) */}
+                <div className="hidden sm:block p-5 sm:p-6 space-y-2 leading-relaxed">
                   <div className="text-slate-300">
                     <span className="text-rose-400 font-semibold">const</span>{' '}
                     <span className="text-sky-300">developer</span> = &#123;
@@ -182,12 +203,14 @@ export default function Hero() {
                     <span className="text-rose-400 font-semibold">export default</span> developer;
                   </div>
                 </div>
+              </div>
 
-                {/* Mobile Bottom Bar Inside Code Card */}
-                <div className="sm:hidden px-4 py-3 bg-[#0F172A]/80 border-t border-slate-800 flex items-center justify-between text-[11px] font-sans">
-                  <span className="text-amber-400 font-bold">⭐ 100% Direct Delivery</span>
-                  <span className="text-[#FF8C42] font-bold">Quick Response</span>
-                </div>
+              {/* Mobile Bottom Bar Inside Card (Matching 01-home-mobile.png) */}
+              <div className="sm:hidden pt-3.5 pb-1 px-1 flex items-center justify-between text-xs font-semibold">
+                <span className="text-[#1F2937] flex items-center gap-1.5 font-bold">
+                  <span className="text-amber-500">⭐</span> 100% Direct Delivery
+                </span>
+                <span className="text-[#FF6B00] font-bold">Quick Response</span>
               </div>
 
               {/* Floating Bottom-Left Availability Badge (Desktop) */}
@@ -203,14 +226,14 @@ export default function Hero() {
             </div>
 
             {/* Mobile Service Badges Below Code Card */}
-            <div className="md:hidden flex items-center justify-center gap-2 mt-6 w-full">
-              <span className="px-3 py-1.5 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs font-semibold text-[#1F2937]">
+            <div className="md:hidden flex items-center justify-center gap-2 sm:gap-3 mt-6 w-full hero-mobile-badges">
+              <span className="flex-1 max-w-[110px] py-2 px-2.5 rounded-xl bg-white border border-[#E5E7EB] text-xs font-medium text-[#1F2937] shadow-sm text-center flex items-center justify-center gap-1.5 whitespace-nowrap">
                 🌐 Web Dev
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs font-semibold text-[#1F2937]">
+              <span className="flex-1 max-w-[110px] py-2 px-2.5 rounded-xl bg-white border border-[#E5E7EB] text-xs font-medium text-[#1F2937] shadow-sm text-center flex items-center justify-center gap-1.5 whitespace-nowrap">
                 📱 Android
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs font-semibold text-[#1F2937]">
+              <span className="flex-1 max-w-[110px] py-2 px-2.5 rounded-xl bg-white border border-[#E5E7EB] text-xs font-medium text-[#1F2937] shadow-sm text-center flex items-center justify-center gap-1.5 whitespace-nowrap">
                 🚀 Cloud
               </span>
             </div>

@@ -60,3 +60,53 @@ body {
 .whatsapp-glow {
   box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
 }
+
+/* ==========================================================================
+   Mobile View Responsive Fixes (Media Queries)
+   Ensures desktop UI is completely undisturbed while mobile view is polished.
+   ========================================================================== */
+
+@media screen and (max-width: 1023px) {
+  /* Right column stacks vertically on mobile/tablet so code card and badges don't collide */
+  .hero-right-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .hero-code-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-mobile-badges {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* Ensure no accidental horizontal viewport overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Full-width touch friendly action buttons on mobile */
+  .hero-action-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-mobile-badges > span {
+    flex: 1 1 0%;
+    min-width: 85px;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+  }
+}
