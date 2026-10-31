@@ -43,75 +43,76 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF6B00] to-[#FF8C42] flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
-            T
-          </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
-              JADE TEJA
-            </span>
-            <span className="text-[10px] sm:text-[11px] font-bold text-[#FF6B00] tracking-wider uppercase mt-1">
-              WEB & ANDROID DEVELOPER
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => {
-            const active = isLinkActive(link.href);
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`relative py-2 text-sm font-semibold transition-colors ${
-                  active ? 'text-[#FF6B00]' : 'text-[#4B5563] hover:text-[#FF6B00]'
-                }`}
-              >
-                {link.name}
-                {active && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#FF6B00] rounded-full" />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Desktop CTA Button */}
-        <div className="hidden lg:flex items-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 transition-all"
-          >
-            Get a Quote
-            <ArrowRight className="w-4 h-4" />
+    <>
+      <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF6B00] to-[#FF8C42] flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
+              T
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
+                JADE TEJA
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#FF6B00] tracking-wider uppercase mt-1">
+                WEB & ANDROID DEVELOPER
+              </span>
+            </div>
           </Link>
-        </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="lg:hidden flex items-center">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open Navigation Menu"
-            className="p-2.5 rounded-xl bg-[#F3F4F6] text-[#1F2937] hover:bg-[#E5E7EB] focus:outline-none transition-colors"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-      </div>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {NAV_LINKS.map((link) => {
+              const active = isLinkActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`relative py-2 text-sm font-semibold transition-colors ${
+                    active ? 'text-[#FF6B00]' : 'text-[#4B5563] hover:text-[#FF6B00]'
+                  }`}
+                >
+                  {link.name}
+                  {active && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#FF6B00] rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
 
-      {/* Mobile Navigation Fullscreen Modal Overlay (matching 14-navigation-mobile.png) */}
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 transition-all"
+            >
+              Get a Quote
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <div className="lg:hidden flex items-center">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open Navigation Menu"
+              className="p-2.5 rounded-xl bg-[#F3F4F6] border border-[#E5E7EB] text-[#1F2937] hover:bg-[#E5E7EB] active:scale-95 focus:outline-none transition-all shadow-sm"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Fullscreen Mobile Navigation Modal rendered outside header for guaranteed top-level z-index */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-white overflow-y-auto">
-          {/* Inner container with max-width for neat tablet/mobile alignment */}
+        <div className="fixed inset-0 z-[9999] lg:hidden flex flex-col bg-white overflow-y-auto">
           <div className="w-full max-w-lg mx-auto flex flex-col flex-1 justify-between p-6 bg-white min-h-screen">
             <div>
-              {/* Header inside Menu */}
+              {/* Header inside Menu (Matching 14-navigation-mobile.png) */}
               <div className="flex items-center justify-between pb-6 border-b border-[#F3F4F6]">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-[#FF6B00] flex items-center justify-center text-white font-extrabold text-lg shadow-sm">
@@ -133,7 +134,7 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Navigation Menu Label */}
+              {/* Navigation Menu Header */}
               <div className="mt-6 mb-2 px-2">
                 <span className="text-[11px] font-bold text-[#9CA3AF] tracking-wider uppercase">
                   NAVIGATION MENU
@@ -163,7 +164,7 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* Bottom Section: Get a Quote CTA & Contact Details */}
+            {/* Bottom Actions */}
             <div className="pt-6 pb-2 border-t border-[#F3F4F6] flex flex-col items-center gap-3.5">
               <Link
                 href="/contact"
@@ -180,6 +181,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
