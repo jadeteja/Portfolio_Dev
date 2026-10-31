@@ -105,49 +105,43 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer (matching 14-navigation-mobile.png) */}
+      {/* Mobile Navigation Fullscreen Modal Overlay (matching 14-navigation-mobile.png) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-
-          {/* Drawer Panel */}
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl flex flex-col justify-between p-6 z-50 animate-in slide-in-from-right duration-300">
+        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-white overflow-y-auto">
+          {/* Inner container with max-width for neat tablet/mobile alignment */}
+          <div className="w-full max-w-lg mx-auto flex flex-col flex-1 justify-between p-6 bg-white min-h-screen">
             <div>
-              {/* Drawer Header */}
+              {/* Header inside Menu */}
               <div className="flex items-center justify-between pb-6 border-b border-[#F3F4F6]">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#FF6B00] flex items-center justify-center text-white font-extrabold text-lg">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-[#FF6B00] flex items-center justify-center text-white font-extrabold text-lg shadow-sm">
                     T
                   </div>
                   <div className="flex flex-col">
                     <span className="font-extrabold text-base text-[#1F2937]">JADE TEJA</span>
-                    <span className="text-[10px] font-bold text-[#FF6B00] uppercase">WEB & ANDROID</span>
+                    <span className="text-[10px] font-bold text-[#FF6B00] uppercase tracking-wide">WEB & ANDROID</span>
                   </div>
-                </div>
+                </Link>
 
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Close Navigation"
-                  className="w-9 h-9 rounded-xl bg-[#FFF3E8] text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] transition-colors"
+                  className="w-10 h-10 rounded-xl bg-[#FFF3E8] text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] active:scale-95 transition-all"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              {/* Navigation Menu Header */}
-              <div className="mt-6 mb-2">
+              {/* Navigation Menu Label */}
+              <div className="mt-6 mb-2 px-2">
                 <span className="text-[11px] font-bold text-[#9CA3AF] tracking-wider uppercase">
                   NAVIGATION MENU
                 </span>
               </div>
 
               {/* Links List */}
-              <div className="flex flex-col space-y-1.5 mt-2">
+              <nav className="flex flex-col space-y-1 mt-2">
                 {NAV_LINKS.map((link) => {
                   const active = isLinkActive(link.href);
                   return (
@@ -155,31 +149,31 @@ export default function Header() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                      className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
                         active
-                          ? 'bg-[#FFF3E8] text-[#FF6B00] font-bold'
-                          : 'text-[#1F2937] hover:bg-[#F9FAFB] hover:text-[#FF6B00]'
+                          ? 'bg-[#FFF3E8] text-[#FF6B00]'
+                          : 'text-[#1F2937] hover:bg-[#F9FAFB] active:bg-[#F3F4F6]'
                       }`}
                     >
-                      <span>{link.name}</span>
+                      <span>{link.name === 'About' ? 'About Me' : link.name}</span>
                       <ArrowRight className={`w-4 h-4 ${active ? 'text-[#FF6B00]' : 'text-[#9CA3AF]'}`} />
                     </Link>
                   );
                 })}
-              </div>
+              </nav>
             </div>
 
-            {/* Drawer Bottom Actions */}
-            <div className="pt-6 border-t border-[#F3F4F6] flex flex-col items-center gap-3">
+            {/* Bottom Section: Get a Quote CTA & Contact Details */}
+            <div className="pt-6 pb-2 border-t border-[#F3F4F6] flex flex-col items-center gap-3.5">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-semibold text-sm shadow-md hover:brightness-105 active:scale-98 transition-all"
+                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-bold text-base shadow-lg shadow-[#FF6B00]/25 hover:brightness-105 active:scale-98 transition-all"
               >
                 Get a Quote
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </Link>
-              <p className="text-[11px] text-[#6B7280] font-medium text-center">
+              <p className="text-xs text-[#6B7280] font-medium text-center">
                 jade.teja@gmail.com • +91 6304579593
               </p>
             </div>
