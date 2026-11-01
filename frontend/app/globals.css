@@ -110,3 +110,19 @@ body {
     font-size: 0.75rem;
   }
 }
+
+/* Touch and Click Ripple Animation */
+@keyframes ping-once {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-ping-once {
+  animation: ping-once 0.65s cubic-bezier(0, 0, 0.2, 1) forwards;
+}

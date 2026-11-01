@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import InteractiveTouchCursor from '@/components/3d/InteractiveTouchCursor';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -90,6 +91,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <WhatsAppButton />
+          <InteractiveTouchCursor />
         </ThemeProvider>
       </body>
     </html>
