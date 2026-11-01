@@ -40,36 +40,36 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full pt-8 pb-16 lg:py-20 overflow-hidden bg-white">
+    <section ref={heroRef} className="relative w-full pt-8 pb-16 lg:py-20 overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-200">
       {/* Decorative background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FFF3E8] rounded-full blur-3xl opacity-60 -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FFF3E8] dark:bg-brand-orange/10 rounded-full blur-3xl opacity-60 -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Headline, Copy, Actions, Highlights */}
           <div ref={leftColRef} className="lg:col-span-7 flex flex-col justify-center">
             {/* Desktop Pill Badge */}
-            <div className="hero-anim-item hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold tracking-wide w-fit mb-6">
+            <div className="hero-anim-item hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold tracking-wide w-fit mb-6">
               <span className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse" />
               TURNING YOUR IDEAS INTO POWERFUL DIGITAL EXPERIENCES
             </div>
 
             {/* Mobile Pill Badge */}
-            <div className="hero-anim-item sm:hidden inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-[11px] font-bold tracking-wide w-fit mb-5">
+            <div className="hero-anim-item sm:hidden inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-[11px] font-bold tracking-wide w-fit mb-5">
               <span className="w-2 h-2 rounded-full bg-[#FF6B00]" />
               Your Idea. My Code. Our Success.
             </div>
 
             {/* Main Headline */}
-            <h1 className="hero-anim-item text-3xl sm:text-5xl lg:text-[56px] font-black text-[#1F2937] leading-[1.14] tracking-tight mb-5">
+            <h1 className="hero-anim-item text-3xl sm:text-5xl lg:text-[56px] font-black text-[#1F2937] dark:text-white leading-[1.14] tracking-tight mb-5">
               I Build Websites &{' '}
               <span className="text-[#FF6B00] inline-block">Android Apps</span> That Grow Your Business
             </h1>
 
             {/* Subtitle Description */}
-            <p className="hero-anim-item text-base sm:text-lg text-[#6B7280] leading-relaxed max-w-xl mb-7 sm:mb-8">
+            <p className="hero-anim-item text-base sm:text-lg text-[#6B7280] dark:text-gray-300 leading-relaxed max-w-xl mb-7 sm:mb-8">
               Affordable, modern, responsive, and scalable digital solutions crafted with clean code and transparent pricing starting at just{' '}
-              <span className="font-bold text-[#1F2937]">₹5,000</span>.
+              <span className="font-bold text-[#1F2937] dark:text-white">₹5,000</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -83,41 +83,41 @@ export default function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="hero-action-btn flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white border-2 border-[#E5E7EB] text-[#1F2937] font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] active:scale-98 transition-all"
+                className="hero-action-btn flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white dark:bg-gray-900 border-2 border-[#E5E7EB] dark:border-gray-700 text-[#1F2937] dark:text-gray-200 font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] active:scale-98 transition-all"
               >
                 View My Work
               </Link>
             </div>
 
             {/* Desktop Three Service Highlights */}
-            <div className="hero-anim-item hidden md:grid grid-cols-3 gap-6 pt-8 border-t border-[#F3F4F6]">
+            <div className="hero-anim-item hidden md:grid grid-cols-3 gap-6 pt-8 border-t border-[#F3F4F6] dark:border-gray-800">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] flex items-center justify-center text-[#FF6B00]">
+                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] dark:bg-brand-orange/15 flex items-center justify-center text-[#FF6B00]">
                   <Monitor className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-[#1F2937]">Website Dev</h4>
-                  <p className="text-xs text-[#6B7280]">High-Speed & Responsive</p>
+                  <h4 className="font-bold text-sm text-[#1F2937] dark:text-white">Website Dev</h4>
+                  <p className="text-xs text-[#6B7280] dark:text-gray-400">High-Speed & Responsive</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] flex items-center justify-center text-[#FF6B00]">
+                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] dark:bg-brand-orange/15 flex items-center justify-center text-[#FF6B00]">
                   <Smartphone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-[#1F2937]">Android Apps</h4>
-                  <p className="text-xs text-[#6B7280]">Native & Robust Code</p>
+                  <h4 className="font-bold text-sm text-[#1F2937] dark:text-white">Android Apps</h4>
+                  <p className="text-xs text-[#6B7280] dark:text-gray-400">Native & Robust Code</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] flex items-center justify-center text-[#FF6B00]">
+                <div className="w-11 h-11 rounded-xl bg-[#FFF3E8] dark:bg-brand-orange/15 flex items-center justify-center text-[#FF6B00]">
                   <Layers className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-[#1F2937]">Deployment & Care</h4>
-                  <p className="text-xs text-[#6B7280]">Full Cloud Setup</p>
+                  <h4 className="font-bold text-sm text-[#1F2937] dark:text-white">Deployment & Care</h4>
+                  <p className="text-xs text-[#6B7280] dark:text-gray-400">Full Cloud Setup</p>
                 </div>
               </div>
             </div>
@@ -126,15 +126,15 @@ export default function Hero() {
           {/* Right Column: Interactive Code Illustration + Floating Badges */}
           <div ref={rightColRef} className="lg:col-span-5 relative flex flex-col items-center justify-center mt-4 lg:mt-0 w-full hero-right-column">
             {/* Outer Decorative Container */}
-            <div className="relative w-full max-w-lg p-4 sm:p-7 rounded-3xl bg-gradient-to-b from-[#FFF7ED] to-white border border-[#FFE0C2] shadow-sm hero-code-card">
+            <div className="relative w-full max-w-lg p-4 sm:p-7 rounded-3xl bg-gradient-to-b from-[#FFF7ED] to-white dark:from-gray-900 dark:to-gray-950 border border-[#FFE0C2] dark:border-gray-800 shadow-sm hero-code-card">
               {/* Floating Top-Right Pricing Badge (Desktop) */}
-              <div className="hero-float-badge hidden sm:flex absolute -top-5 -right-4 z-20 items-center gap-3 bg-white px-4 py-2.5 rounded-2xl border border-[#FFE0C2] shadow-lg">
+              <div className="hero-float-badge hidden sm:flex absolute -top-5 -right-4 z-20 items-center gap-3 bg-white dark:bg-gray-900 px-4 py-2.5 rounded-2xl border border-[#FFE0C2] dark:border-gray-700 shadow-lg">
                 <div className="w-8 h-8 rounded-xl bg-[#FFF3E8] text-[#FF6B00] font-black flex items-center justify-center text-sm">
                   ₹
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase font-bold text-[#6B7280]">Affordable Starting</span>
-                  <span className="text-xs font-black text-[#1F2937]">₹5,000 Only</span>
+                  <span className="text-[10px] uppercase font-bold text-[#6B7280] dark:text-gray-400">Affordable Starting</span>
+                  <span className="text-xs font-black text-[#1F2937] dark:text-white">₹5,000 Only</span>
                 </div>
               </div>
 
