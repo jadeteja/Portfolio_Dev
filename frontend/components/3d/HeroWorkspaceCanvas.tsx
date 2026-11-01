@@ -566,8 +566,8 @@ export default function HeroWorkspaceCanvas() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing select-none"
-      style={{ touchAction: 'none' }}
+      className="w-full h-full min-h-[300px] sm:min-h-[420px] lg:min-h-[500px] flex items-center justify-center pointer-events-none select-none"
+      style={{ touchAction: 'pan-y' }}
       aria-label="Interactive 3D Developer Workspace"
     />
   );

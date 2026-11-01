@@ -234,7 +234,7 @@ export default function Hero() {
             className="lg:col-span-6 xl:col-span-5 relative flex flex-col items-center justify-center mt-4 lg:mt-0 w-full"
           >
             {/* Outer Container with Floating Badges */}
-            <div className="hero-3d-wrapper relative w-full aspect-square max-w-[500px] lg:max-w-none rounded-3xl bg-gradient-to-b from-[#FFF7ED]/70 via-white/80 to-[#FFF7ED]/40 dark:from-gray-900/80 dark:via-gray-950/90 dark:to-gray-900/70 backdrop-blur-xl border border-[#FFE0C2]/80 dark:border-brand-orange/30 shadow-2xl p-2 sm:p-4 flex items-center justify-center">
+            <div className="hero-3d-wrapper relative w-full aspect-square max-w-[420px] sm:max-w-[480px] lg:max-w-none rounded-3xl bg-gradient-to-b from-[#FFF7ED]/70 via-white/80 to-[#FFF7ED]/40 dark:from-gray-900/80 dark:via-gray-950/90 dark:to-gray-900/70 backdrop-blur-xl border border-[#FFE0C2]/80 dark:border-brand-orange/30 shadow-2xl p-2 sm:p-4 flex items-center justify-center">
               {/* Floating Top-Right Pricing Badge (Desktop) */}
               <div className="hero-float-badge hidden sm:flex absolute -top-5 -right-3 z-30 items-center gap-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-[#FFE0C2] dark:border-brand-orange/30 shadow-xl pointer-events-auto hover:scale-105 transition-transform">
                 <div className="w-8 h-8 rounded-xl bg-[#FFF3E8] dark:bg-brand-orange/15 text-[#FF6B00] font-black flex items-center justify-center text-sm shadow-sm">
@@ -251,7 +251,7 @@ export default function Hero() {
               </div>
 
               {/* 3D WebGL Canvas Scene (Laptop + Smartphone + Particles) */}
-              <div className="relative w-full h-full min-h-[380px] sm:min-h-[440px] flex items-center justify-center overflow-hidden rounded-2xl">
+              <div className="relative w-full h-full min-h-[300px] sm:min-h-[420px] flex items-center justify-center overflow-hidden rounded-2xl pointer-events-none">
                 <HeroWorkspaceCanvas />
               </div>
 
