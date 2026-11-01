@@ -128,7 +128,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative w-full pt-8 pb-16 lg:py-20 overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-200"
+      className="relative w-full pt-8 pb-16 lg:py-20 overflow-hidden bg-transparent transition-colors duration-200"
     >
       {/* 3D Atmospheric Background Particles */}
       <AmbientParticlesCanvas />
