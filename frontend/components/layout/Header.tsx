@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -44,7 +45,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-all">
+      <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-b border-[#E5E7EB] dark:border-gray-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -52,7 +53,7 @@ export default function Header() {
               T
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
+              <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] dark:text-white tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
                 JADE TEJA
               </span>
               <span className="text-[10px] sm:text-[11px] font-bold text-[#FF6B00] tracking-wider uppercase mt-1">
@@ -70,7 +71,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   className={`relative py-2 text-sm font-semibold transition-colors ${
-                    active ? 'text-[#FF6B00]' : 'text-[#4B5563] hover:text-[#FF6B00]'
+                    active ? 'text-[#FF6B00]' : 'text-[#4B5563] dark:text-gray-300 hover:text-[#FF6B00] dark:hover:text-[#FF6B00]'
                   }`}
                 >
                   {link.name}
@@ -82,8 +83,9 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden lg:flex items-center">
+          {/* Desktop CTA Button & Dark Mode Toggle */}
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 transition-all"
@@ -93,13 +95,14 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile Hamburger Button & Toggle */}
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Navigation Menu"
-              className="p-2.5 rounded-xl bg-[#F3F4F6] border border-[#E5E7EB] text-[#1F2937] hover:bg-[#E5E7EB] active:scale-95 focus:outline-none transition-all shadow-sm"
+              className="p-2.5 rounded-xl bg-[#F3F4F6] dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 text-[#1F2937] dark:text-gray-200 hover:bg-[#E5E7EB] dark:hover:bg-gray-700 active:scale-95 focus:outline-none transition-all shadow-sm"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -109,34 +112,37 @@ export default function Header() {
 
       {/* Fullscreen Mobile Navigation Modal rendered outside header for guaranteed top-level z-index */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[9999] lg:hidden flex flex-col bg-white overflow-y-auto">
-          <div className="w-full max-w-lg mx-auto flex flex-col flex-1 justify-between p-6 bg-white min-h-screen">
+        <div className="fixed inset-0 z-[9999] lg:hidden flex flex-col bg-white dark:bg-gray-950 overflow-y-auto">
+          <div className="w-full max-w-lg mx-auto flex flex-col flex-1 justify-between p-6 bg-white dark:bg-gray-950 min-h-screen">
             <div>
               {/* Header inside Menu (Matching 14-navigation-mobile.png) */}
-              <div className="flex items-center justify-between pb-6 border-b border-[#F3F4F6]">
+              <div className="flex items-center justify-between pb-6 border-b border-[#F3F4F6] dark:border-gray-800">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-[#FF6B00] flex items-center justify-center text-white font-extrabold text-lg shadow-sm">
                     T
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-extrabold text-base text-[#1F2937]">JADE TEJA</span>
+                    <span className="font-extrabold text-base text-[#1F2937] dark:text-white">JADE TEJA</span>
                     <span className="text-[10px] font-bold text-[#FF6B00] uppercase tracking-wide">WEB & ANDROID</span>
                   </div>
                 </Link>
 
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  aria-label="Close Navigation"
-                  className="w-10 h-10 rounded-xl bg-[#FFF3E8] text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] active:scale-95 transition-all"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                  <button
+                    type="button"
+                    onClick={() => setMobileMenuOpen(false)}
+                    aria-label="Close Navigation"
+                    className="w-10 h-10 rounded-xl bg-[#FFF3E8] dark:bg-gray-800 text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] dark:hover:bg-gray-700 active:scale-95 transition-all"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
 
               {/* Navigation Menu Header */}
               <div className="mt-6 mb-2 px-2">
-                <span className="text-[11px] font-bold text-[#9CA3AF] tracking-wider uppercase">
+                <span className="text-[11px] font-bold text-[#9CA3AF] dark:text-gray-400 tracking-wider uppercase">
                   NAVIGATION MENU
                 </span>
               </div>
@@ -152,8 +158,8 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
                         active
-                          ? 'bg-[#FFF3E8] text-[#FF6B00]'
-                          : 'text-[#1F2937] hover:bg-[#F9FAFB] active:bg-[#F3F4F6]'
+                          ? 'bg-[#FFF3E8] dark:bg-brand-orange/20 text-[#FF6B00]'
+                          : 'text-[#1F2937] dark:text-gray-200 hover:bg-[#F9FAFB] dark:hover:bg-gray-900 active:bg-[#F3F4F6]'
                       }`}
                     >
                       <span>{link.name === 'About' ? 'About Me' : link.name}</span>
@@ -165,7 +171,7 @@ export default function Header() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-6 pb-2 border-t border-[#F3F4F6] flex flex-col items-center gap-3.5">
+            <div className="pt-6 pb-2 border-t border-[#F3F4F6] dark:border-gray-800 flex flex-col items-center gap-3.5">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -174,7 +180,7 @@ export default function Header() {
                 Get a Quote
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <p className="text-xs text-[#6B7280] font-medium text-center">
+              <p className="text-xs text-[#6B7280] dark:text-gray-400 font-medium text-center">
                 jade.teja@gmail.com • +91 6304579593
               </p>
             </div>
