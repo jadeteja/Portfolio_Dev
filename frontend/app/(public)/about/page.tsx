@@ -13,7 +13,7 @@ export default async function AboutPage() {
   const settings = await getSiteSettings();
 
   return (
-    <div className="w-full bg-white py-12 lg:py-20">
+    <div className="w-full bg-white dark:bg-gray-950 transition-colors py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Developer Profile Card (Desktop) */}
@@ -25,7 +25,7 @@ export default async function AboutPage() {
               </div>
 
               {/* Name & Title */}
-              <h3 className="text-2xl font-black text-[#1F2937] tracking-tight mb-1">
+              <h3 className="text-2xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-1">
                 {settings.brandName || 'JADE TEJA'}
               </h3>
               <p className="text-sm font-bold text-[#FF6B00] mb-6">
@@ -34,11 +34,11 @@ export default async function AboutPage() {
 
               {/* Badges */}
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#FFE0C2] text-xs font-semibold text-[#4B5563]">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#FFE0C2] dark:border-brand-orange/30 text-xs font-semibold text-[#4B5563] dark:text-gray-300">
                   <MapPin className="w-3.5 h-3.5 text-[#FF6B00]" />
                   <span>{settings.location || 'India'}</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#FFE0C2] text-xs font-semibold text-[#1F2937]">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#FFE0C2] dark:border-brand-orange/30 text-xs font-semibold text-[#1F2937] dark:text-gray-100">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span className="text-emerald-700 font-bold">Available</span>
                 </div>
@@ -49,12 +49,12 @@ export default async function AboutPage() {
           {/* Right Column: Bio, Values, Skills, CTA (Desktop & Mobile) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Pill Badge */}
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold tracking-wide w-fit mb-4">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold tracking-wide w-fit mb-4">
               ABOUT JADE TEJA
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] tracking-tight mb-5">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-5">
               Meet Your Developer
             </h1>
 
@@ -64,16 +64,16 @@ export default async function AboutPage() {
                 <User className="w-8 h-8" />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-lg font-black text-[#1F2937]">JADE TEJA</h3>
+                <h3 className="text-lg font-black text-[#1F2937] dark:text-gray-100">JADE TEJA</h3>
                 <p className="text-xs font-bold text-[#FF6B00]">Freelance Web & Android Developer</p>
-                <p className="text-[11px] text-[#6B7280] font-medium mt-0.5">
+                <p className="text-[11px] text-[#6B7280] dark:text-gray-400 font-medium mt-0.5">
                   Turning Ideas into Digital Products
                 </p>
               </div>
             </div>
 
             {/* Introduction Copy */}
-            <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-[#4B5563] dark:text-gray-300 leading-relaxed mb-8">
               {settings.bio ||
                 'I am a dedicated freelance developer specializing in building modern web applications and native Android apps. I focus on solving real-world business challenges by engineering clean, robust code with exceptional user interfaces.'}
             </p>
@@ -81,45 +81,45 @@ export default async function AboutPage() {
             {/* 4 Feature / Value Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {/* Quality */}
-              <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm hover:border-[#FF6B00]/40 transition-all">
+              <div className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:border-[#FF6B00]/40 transition-all">
                 <div className="flex items-center gap-2 mb-2 text-[#FF6B00] font-bold text-base">
                   <Sparkles className="w-4 h-4" />
                   <h4>Quality</h4>
                 </div>
-                <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 leading-relaxed">
                   Modern standards, clean architectures, and responsive performance.
                 </p>
               </div>
 
               {/* Transparency */}
-              <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm hover:border-[#FF6B00]/40 transition-all">
+              <div className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:border-[#FF6B00]/40 transition-all">
                 <div className="flex items-center gap-2 mb-2 text-[#FF6B00] font-bold text-base">
                   <Search className="w-4 h-4" />
                   <h4>Transparency</h4>
                 </div>
-                <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 leading-relaxed">
                   Clear scope, open milestones, and zero unexpected charges.
                 </p>
               </div>
 
               {/* Affordability */}
-              <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm hover:border-[#FF6B00]/40 transition-all">
+              <div className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:border-[#FF6B00]/40 transition-all">
                 <div className="flex items-center gap-2 mb-2 text-[#FF6B00] font-bold text-base">
                   <DollarSign className="w-4 h-4" />
                   <h4>Affordability</h4>
                 </div>
-                <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 leading-relaxed">
                   Premium agency-grade design without high agency overhead costs.
                 </p>
               </div>
 
               {/* Support */}
-              <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm hover:border-[#FF6B00]/40 transition-all">
+              <div className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:border-[#FF6B00]/40 transition-all">
                 <div className="flex items-center gap-2 mb-2 text-[#FF6B00] font-bold text-base">
                   <HeartHandshake className="w-4 h-4" />
                   <h4>Support</h4>
                 </div>
-                <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 leading-relaxed">
                   Dedicated assistance through deployment, launch, and maintenance.
                 </p>
               </div>
@@ -127,20 +127,20 @@ export default async function AboutPage() {
 
             {/* Key Skills */}
             <div className="flex flex-wrap items-center gap-2.5 mb-10">
-              <span className="text-xs font-bold text-[#1F2937] mr-1">Key Skills:</span>
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold">
+              <span className="text-xs font-bold text-[#1F2937] dark:text-gray-100 mr-1">Key Skills:</span>
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold">
                 Web Development
               </span>
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold">
                 Android Development
               </span>
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold">
                 APIs & Backend
               </span>
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold">
                 Databases
               </span>
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold">
                 Deployment
               </span>
             </div>

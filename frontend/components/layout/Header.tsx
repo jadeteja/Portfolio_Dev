@@ -53,7 +53,7 @@ export default function Header() {
               T
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] dark:text-white tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
+              <span className="font-extrabold text-lg sm:text-xl text-[#1F2937] dark:text-gray-100 dark:text-white tracking-tight leading-none group-hover:text-[#FF6B00] transition-colors">
                 JADE TEJA
               </span>
               <span className="text-[10px] sm:text-[11px] font-bold text-[#FF6B00] tracking-wider uppercase mt-1">
@@ -102,7 +102,7 @@ export default function Header() {
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Navigation Menu"
-              className="p-2.5 rounded-xl bg-[#F3F4F6] dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-700 text-[#1F2937] dark:text-gray-200 hover:bg-[#E5E7EB] dark:hover:bg-gray-700 active:scale-95 focus:outline-none transition-all shadow-sm"
+              className="p-2.5 rounded-xl bg-[#F3F4F6] dark:bg-gray-800 border border-[#E5E7EB] dark:border-gray-800 dark:border-gray-700 text-[#1F2937] dark:text-gray-100 dark:text-gray-200 hover:bg-[#E5E7EB] dark:hover:bg-gray-700 active:scale-95 focus:outline-none transition-all shadow-sm"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -122,7 +122,7 @@ export default function Header() {
                     T
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-extrabold text-base text-[#1F2937] dark:text-white">JADE TEJA</span>
+                    <span className="font-extrabold text-base text-[#1F2937] dark:text-gray-100 dark:text-white">JADE TEJA</span>
                     <span className="text-[10px] font-bold text-[#FF6B00] uppercase tracking-wide">WEB & ANDROID</span>
                   </div>
                 </Link>
@@ -133,7 +133,7 @@ export default function Header() {
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
                     aria-label="Close Navigation"
-                    className="w-10 h-10 rounded-xl bg-[#FFF3E8] dark:bg-gray-800 text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] dark:hover:bg-gray-700 active:scale-95 transition-all"
+                    className="w-10 h-10 rounded-xl bg-[#FFF3E8] dark:bg-brand-orange/15 dark:bg-gray-800 text-[#FF6B00] flex items-center justify-center hover:bg-[#FFE0C2] dark:hover:bg-gray-700 active:scale-95 transition-all"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -158,12 +158,12 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
                         active
-                          ? 'bg-[#FFF3E8] dark:bg-brand-orange/20 text-[#FF6B00]'
-                          : 'text-[#1F2937] dark:text-gray-200 hover:bg-[#F9FAFB] dark:hover:bg-gray-900 active:bg-[#F3F4F6]'
+                          ? 'bg-[#FFF3E8] dark:bg-brand-orange/15 dark:bg-brand-orange/20 text-[#FF6B00]'
+                          : 'text-[#1F2937] dark:text-gray-100 dark:text-gray-200 hover:bg-[#F9FAFB] dark:bg-gray-900 dark:hover:bg-gray-900 active:bg-[#F3F4F6]'
                       }`}
                     >
                       <span>{link.name === 'About' ? 'About Me' : link.name}</span>
-                      <ArrowRight className={`w-4 h-4 ${active ? 'text-[#FF6B00]' : 'text-[#9CA3AF]'}`} />
+                      <ArrowRight className={`w-4 h-4 ${active ? 'text-[#FF6B00]' : 'text-[#9CA3AF] dark:text-gray-400'}`} />
                     </Link>
                   );
                 })}

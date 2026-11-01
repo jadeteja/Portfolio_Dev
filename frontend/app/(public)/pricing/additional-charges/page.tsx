@@ -17,13 +17,13 @@ export default async function AdditionalChargesPage() {
   const getBadgeStyle = (chargeType: string) => {
     switch (chargeType) {
       case 'PROVIDER_FEE':
-        return 'bg-[#F3F4F6] text-[#4B5563] border-[#E5E7EB]';
+        return 'bg-[#F3F4F6] text-[#4B5563] dark:text-gray-300 border-[#E5E7EB] dark:border-gray-800';
       case 'USAGE_BASED':
         return 'bg-[#EFF6FF] text-[#2563EB] border-[#DBEAFE]';
       case 'ONE_TIME':
       case 'CUSTOM_QUOTE':
       default:
-        return 'bg-[#FFF3E8] text-[#FF6B00] border-[#FFE0C2]';
+        return 'bg-[#FFF3E8] dark:bg-brand-orange/15 text-[#FF6B00] border-[#FFE0C2] dark:border-brand-orange/30';
     }
   };
 
@@ -36,22 +36,22 @@ export default async function AdditionalChargesPage() {
   };
 
   return (
-    <div className="w-full bg-white py-12 lg:py-20">
+    <div className="w-full bg-white dark:bg-gray-950 transition-colors py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Navigation Tabs */}
         <PricingNavTabs />
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold tracking-wide mb-4">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold tracking-wide mb-4">
             <span className="hidden sm:inline">COMPLETE TRANSPARENCY</span>
             <span className="sm:hidden">TRANSPARENCY</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-4">
             <span className="hidden sm:inline">Additional Charges & Custom Features</span>
             <span className="sm:hidden">Additional Features</span>
           </h1>
-          <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#6B7280] dark:text-gray-400 leading-relaxed">
             <span className="hidden sm:inline">
               Distinguishing one-time development, recurring hosting, and optional third-party integrations.
             </span>
@@ -66,13 +66,13 @@ export default async function AdditionalChargesPage() {
           {charges.map((charge) => (
             <div
               key={charge.id}
-              className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-sm hover:border-[#FF6B00]/40 transition-all flex items-center justify-between gap-4"
+              className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:border-[#FF6B00]/40 transition-all flex items-center justify-between gap-4"
             >
               <div>
-                <h3 className="font-bold text-sm sm:text-base text-[#1F2937] leading-tight">
+                <h3 className="font-bold text-sm sm:text-base text-[#1F2937] dark:text-gray-100 leading-tight">
                   {charge.title}
                 </h3>
-                <p className="hidden sm:block text-xs sm:text-sm text-[#6B7280] mt-1.5">
+                <p className="hidden sm:block text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 mt-1.5">
                   {charge.description}
                 </p>
               </div>
@@ -90,8 +90,8 @@ export default async function AdditionalChargesPage() {
         </div>
 
         {/* Bottom Banner matching 06-additional-charges-desktop & mobile */}
-        <div className="rounded-3xl bg-[#FFF6EE] border border-[#FFE0C2] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-sm sm:text-base font-medium text-[#1F2937] text-center sm:text-left">
+        <div className="rounded-3xl bg-[#FFF6EE] border border-[#FFE0C2] dark:border-brand-orange/30 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-sm sm:text-base font-medium text-[#1F2937] dark:text-gray-100 text-center sm:text-left">
             <span className="font-bold">Need an exact quote for specific features?</span> Let&apos;s discuss your project scope in detail.
           </p>
           <Link

@@ -32,13 +32,13 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
   }
 
   return (
-    <div className="w-full bg-white py-12 lg:py-20">
+    <div className="w-full bg-white dark:bg-gray-950 transition-colors py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <div className="mb-8">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#6B7280] hover:text-[#FF6B00] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#6B7280] dark:text-gray-400 hover:text-[#FF6B00] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Portfolio
@@ -49,7 +49,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start mb-16">
           {/* Left Column: Interactive Mockup Canvas & Gallery */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="w-full rounded-3xl bg-[#FFF6EE] border border-[#FFE0C2] p-6 sm:p-8 shadow-sm">
+            <div className="w-full rounded-3xl bg-[#FFF6EE] border border-[#FFE0C2] dark:border-brand-orange/30 p-6 sm:p-8 shadow-sm">
               {/* Browser Window Mockup */}
               <div className="w-full rounded-2xl bg-[#1E293B] shadow-xl overflow-hidden border border-slate-700">
                 {/* Browser Tab Header */}
@@ -78,11 +78,11 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
 
                   <div className="grid grid-cols-2 gap-3 my-4">
                     <div className="p-3 rounded-xl bg-[#FFF5EC] border border-[#FFE2CC] text-center">
-                      <span className="block text-xs font-bold text-[#1F2937]">Featured Product</span>
+                      <span className="block text-xs font-bold text-[#1F2937] dark:text-gray-100">Featured Product</span>
                       <span className="text-[11px] text-[#FF6B00] font-black">₹1,499</span>
                     </div>
                     <div className="p-3 rounded-xl bg-[#FFF5EC] border border-[#FFE2CC] text-center">
-                      <span className="block text-xs font-bold text-[#1F2937]">Top Rated Item</span>
+                      <span className="block text-xs font-bold text-[#1F2937] dark:text-gray-100">Top Rated Item</span>
                       <span className="text-[11px] text-[#FF6B00] font-black">₹2,999</span>
                     </div>
                   </div>
@@ -96,13 +96,13 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
 
             {/* Gallery Thumbnail Pills */}
             <div className="hidden sm:grid grid-cols-3 gap-4">
-              <div className="p-4 rounded-2xl bg-[#F9FAFB] border border-[#E5E7EB] text-center text-xs font-bold text-[#4B5563] shadow-sm">
+              <div className="p-4 rounded-2xl bg-[#F9FAFB] dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 text-center text-xs font-bold text-[#4B5563] dark:text-gray-300 shadow-sm">
                 Cart & Checkout
               </div>
-              <div className="p-4 rounded-2xl bg-[#F9FAFB] border border-[#E5E7EB] text-center text-xs font-bold text-[#4B5563] shadow-sm">
+              <div className="p-4 rounded-2xl bg-[#F9FAFB] dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 text-center text-xs font-bold text-[#4B5563] dark:text-gray-300 shadow-sm">
                 Admin Panel
               </div>
-              <div className="p-4 rounded-2xl bg-[#F9FAFB] border border-[#E5E7EB] text-center text-xs font-bold text-[#4B5563] shadow-sm">
+              <div className="p-4 rounded-2xl bg-[#F9FAFB] dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 text-center text-xs font-bold text-[#4B5563] dark:text-gray-300 shadow-sm">
                 Mobile View
               </div>
             </div>
@@ -112,14 +112,14 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] text-xs font-bold tracking-wide mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] text-xs font-bold tracking-wide mb-4">
                 <span>CONCEPT CASE STUDY</span>
                 <span>•</span>
                 <span>{project.category}</span>
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-6">
                 {project.title}
               </h1>
 
@@ -128,7 +128,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
                 <h4 className="text-xs font-extrabold text-[#FF6B00] tracking-wider uppercase mb-2">
                   PROBLEM ADDRESSED
                 </h4>
-                <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#4B5563] dark:text-gray-300 leading-relaxed">
                   {project.problemStatement ||
                     'Traditional business workflows struggled with legacy friction, lack of mobile optimization, and manual processing.'}
                 </p>
@@ -140,19 +140,19 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
                   FEATURES DEVELOPED
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div className="flex items-center gap-2 text-sm text-[#4B5563]">
+                  <div className="flex items-center gap-2 text-sm text-[#4B5563] dark:text-gray-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
                     <span>Instant search & categorization</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-[#4B5563]">
+                  <div className="flex items-center gap-2 text-sm text-[#4B5563] dark:text-gray-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
                     <span>Integrated payment gateway</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-[#4B5563]">
+                  <div className="flex items-center gap-2 text-sm text-[#4B5563] dark:text-gray-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
                     <span>WhatsApp order confirmation</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-[#4B5563]">
+                  <div className="flex items-center gap-2 text-sm text-[#4B5563] dark:text-gray-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
                     <span>Fast administrative management UI</span>
                   </div>
@@ -169,7 +169,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
                     (tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3.5 py-1.5 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs font-bold text-[#1F2937]"
+                        className="px-3.5 py-1.5 rounded-xl bg-[#F9FAFB] dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 text-xs font-bold text-[#1F2937] dark:text-gray-100"
                       >
                         {tech}
                       </span>
@@ -180,7 +180,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
 
               {/* Links if available */}
               {(project.demoUrl || project.githubUrl) && (
-                <div className="flex items-center gap-4 pt-4 border-t border-[#F3F4F6]">
+                <div className="flex items-center gap-4 pt-4 border-t border-[#F3F4F6] dark:border-gray-800">
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
@@ -196,7 +196,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4B5563] hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4B5563] dark:text-gray-300 hover:underline"
                     >
                       <Github className="w-3.5 h-3.5" /> Source Code
                     </a>
@@ -208,7 +208,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsProps
         </div>
 
         {/* Bottom CTA Button matching 08-project-details-desktop */}
-        <div className="flex justify-center pt-8 border-t border-[#F3F4F6]">
+        <div className="flex justify-center pt-8 border-t border-[#F3F4F6] dark:border-gray-800">
           <Link
             href={`/contact?service=${encodeURIComponent(project.category)}&projectName=${encodeURIComponent(
               project.title

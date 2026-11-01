@@ -9,21 +9,21 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="w-full bg-white py-16 lg:py-28 flex items-center justify-center">
+    <div className="w-full bg-white dark:bg-gray-950 transition-colors py-16 lg:py-28 flex items-center justify-center">
       <div className="max-w-xl w-full mx-auto px-4 sm:px-6">
-        <div className="rounded-[36px] bg-white border border-[#FFE0C2] p-8 sm:p-12 text-center shadow-sm">
+        <div className="rounded-[36px] bg-white dark:bg-gray-900 border border-[#FFE0C2] dark:border-brand-orange/30 p-8 sm:p-12 text-center shadow-sm">
           {/* Circular Checkmark Badge */}
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#FFF3E8] border border-[#FFE0C2] text-[#FF6B00] mx-auto flex items-center justify-center mb-8 shadow-inner">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#FFF3E8] dark:bg-brand-orange/15 border border-[#FFE0C2] dark:border-brand-orange/30 text-[#FF6B00] mx-auto flex items-center justify-center mb-8 shadow-inner">
             <Check className="w-10 h-10 sm:w-12 sm:h-12 stroke-[3]" />
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1F2937] tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-4">
             Thank You for Reaching Out!
           </h1>
 
           {/* Message */}
-          <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed mb-8 max-w-md mx-auto">
+          <p className="text-sm sm:text-base text-[#6B7280] dark:text-gray-400 leading-relaxed mb-8 max-w-md mx-auto">
             Your inquiry has been received. I&apos;ll review your project details and get back to you as soon as possible.
           </p>
 
@@ -47,7 +47,7 @@ export default function ThankYouPage() {
           </div>
 
           {/* Direct Email Note */}
-          <p className="text-xs text-[#6B7280]">
+          <p className="text-xs text-[#6B7280] dark:text-gray-400">
             Direct Email:{' '}
             <a href="mailto:jade.teja@gmail.com" className="text-[#FF6B00] font-bold hover:underline">
               jade.teja@gmail.com

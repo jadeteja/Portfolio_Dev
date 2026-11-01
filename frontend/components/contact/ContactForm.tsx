@@ -82,8 +82,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-[32px] bg-white border border-[#FFE0C2] p-6 sm:p-10 shadow-sm">
-      <h3 className="text-xl sm:text-2xl font-black text-[#1F2937] tracking-tight mb-8">
+    <div className="rounded-[32px] bg-white dark:bg-gray-900 border border-[#FFE0C2] dark:border-brand-orange/30 p-6 sm:p-10 shadow-sm">
+      <h3 className="text-xl sm:text-2xl font-black text-[#1F2937] dark:text-gray-100 tracking-tight mb-8">
         Project Inquiry Form
       </h3>
 
@@ -97,7 +97,7 @@ export default function ContactForm() {
         {/* Full Name & Email */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Full Name *
             </label>
             <input
@@ -105,7 +105,7 @@ export default function ContactForm() {
               placeholder="Aditya Sharma"
               {...register('fullName')}
               className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] transition-all ${
-                errors.fullName ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB]'
+                errors.fullName ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB] dark:border-gray-800'
               }`}
             />
             {errors.fullName && (
@@ -114,7 +114,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Email Address *
             </label>
             <input
@@ -122,7 +122,7 @@ export default function ContactForm() {
               placeholder="aditya@business.com"
               {...register('email')}
               className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] transition-all ${
-                errors.email ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB]'
+                errors.email ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB] dark:border-gray-800'
               }`}
             />
             {errors.email && (
@@ -134,7 +134,7 @@ export default function ContactForm() {
         {/* Mobile/WhatsApp & Project Type */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Mobile / WhatsApp *
             </label>
             <input
@@ -142,7 +142,7 @@ export default function ContactForm() {
               placeholder="+91 98765 43210"
               {...register('phone')}
               className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] transition-all ${
-                errors.phone ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB]'
+                errors.phone ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB] dark:border-gray-800'
               }`}
             />
             {errors.phone && (
@@ -151,12 +151,12 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Project Type *
             </label>
             <select
               {...register('projectType')}
-              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
             >
               <option value="Website Development">Website Development</option>
               <option value="Android App Development">Android App Development</option>
@@ -170,12 +170,12 @@ export default function ContactForm() {
         {/* Budget Range & Timeline */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Estimated Budget
             </label>
             <select
               {...register('budgetRange')}
-              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
             >
               <option value="₹5,000 - ₹20,000">₹5,000 - ₹20,000 (Standard)</option>
               <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000 (Custom Scope)</option>
@@ -184,12 +184,12 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#1F2937] mb-2">
+            <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
               Preferred Timeline
             </label>
             <select
               {...register('preferredTimeline')}
-              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] bg-white transition-all"
             >
               <option value="1-2 Weeks (Standard)">1-2 Weeks (Standard)</option>
               <option value="2-4 Weeks">2-4 Weeks</option>
@@ -200,7 +200,7 @@ export default function ContactForm() {
 
         {/* Description & Features */}
         <div>
-          <label className="block text-xs font-bold text-[#1F2937] mb-2">
+          <label className="block text-xs font-bold text-[#1F2937] dark:text-gray-100 mb-2">
             Project Description & Features
           </label>
           <textarea
@@ -208,7 +208,7 @@ export default function ContactForm() {
             placeholder="Looking for a modern business website with appointment booking and WhatsApp integration."
             {...register('description')}
             className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00] transition-all resize-y ${
-              errors.description ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB]'
+              errors.description ? 'border-rose-400 bg-rose-50/30' : 'border-[#E5E7EB] dark:border-gray-800'
             }`}
           />
           {errors.description && (
@@ -224,7 +224,7 @@ export default function ContactForm() {
             {...register('consentGiven')}
             className="mt-1 w-4 h-4 text-[#FF6B00] rounded border-gray-300 focus:ring-[#FF6B00]"
           />
-          <label htmlFor="consent" className="text-xs text-[#6B7280] leading-relaxed">
+          <label htmlFor="consent" className="text-xs text-[#6B7280] dark:text-gray-400 leading-relaxed">
             I consent to receiving follow-up correspondence regarding this project estimate.
           </label>
         </div>

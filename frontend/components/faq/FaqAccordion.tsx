@@ -27,7 +27,7 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
             className={`rounded-2xl transition-all duration-200 overflow-hidden ${
               isOpen
                 ? 'border-2 border-[#FF8C42] bg-white shadow-sm'
-                : 'border border-[#E5E7EB] bg-white hover:border-[#FF6B00]/40'
+                : 'border border-[#E5E7EB] dark:border-gray-800 bg-white hover:border-[#FF6B00]/40'
             }`}
           >
             <button
@@ -38,7 +38,7 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
             >
               <span
                 className={`text-base sm:text-lg font-bold tracking-tight transition-colors ${
-                  isOpen ? 'text-[#FF6B00]' : 'text-[#1F2937]'
+                  isOpen ? 'text-[#FF6B00]' : 'text-[#1F2937] dark:text-gray-100'
                 }`}
               >
                 {faq.question}
@@ -49,8 +49,8 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
             </button>
 
             {isOpen && (
-              <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-dashed border-[#FFE0C2]">
-                <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
+              <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-dashed border-[#FFE0C2] dark:border-brand-orange/30">
+                <p className="text-sm sm:text-base text-[#4B5563] dark:text-gray-300 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>

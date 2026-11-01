@@ -59,7 +59,7 @@ export default function PortfolioClient({ initialProjects }: PortfolioClientProp
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
                 isActive
                   ? 'bg-[#FF6B00] text-white shadow-md'
-                  : 'bg-[#F9FAFB] text-[#4B5563] border border-[#E5E7EB] hover:bg-gray-100'
+                  : 'bg-[#F9FAFB] dark:bg-gray-900 text-[#4B5563] dark:text-gray-300 border border-[#E5E7EB] dark:border-gray-800 hover:bg-gray-100'
               }`}
             >
               {cat}
@@ -73,7 +73,7 @@ export default function PortfolioClient({ initialProjects }: PortfolioClientProp
         {filteredProjects.map((project, idx) => (
           <div
             key={project.id}
-            className="group rounded-3xl bg-white border border-[#E5E7EB] shadow-sm hover:shadow-cardHover hover:border-[#FFE0C2] transition-all overflow-hidden flex flex-col justify-between"
+            className="group rounded-3xl bg-white dark:bg-gray-900 border border-[#E5E7EB] dark:border-gray-800 shadow-sm hover:shadow-cardHover hover:border-[#FFE0C2] dark:border-brand-orange/30 transition-all overflow-hidden flex flex-col justify-between"
           >
             {/* Top Preview Canvas */}
             <div
@@ -82,7 +82,7 @@ export default function PortfolioClient({ initialProjects }: PortfolioClientProp
               )} p-6 flex flex-col items-center justify-center`}
             >
               {/* Concept Project Badge */}
-              <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-[#FFE0C2] text-[11px] font-bold text-[#FF6B00]">
+              <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-[#FFE0C2] dark:border-brand-orange/30 text-[11px] font-bold text-[#FF6B00]">
                 Concept Project
               </div>
 
@@ -104,24 +104,24 @@ export default function PortfolioClient({ initialProjects }: PortfolioClientProp
                   <span className="font-extrabold uppercase text-[#FF6B00] tracking-wider">
                     {project.category}
                   </span>
-                  <span className="text-[#6B7280] font-medium truncate max-w-[140px]">
+                  <span className="text-[#6B7280] dark:text-gray-400 font-medium truncate max-w-[140px]">
                     {Array.isArray(project.technologies)
                       ? project.technologies.slice(0, 2).join(' • ')
                       : 'React • Node.js'}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#1F2937] tracking-tight mb-2 group-hover:text-[#FF6B00] transition-colors">
+                <h3 className="text-xl font-bold text-[#1F2937] dark:text-gray-100 tracking-tight mb-2 group-hover:text-[#FF6B00] transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-[#6B7280] leading-relaxed line-clamp-2">
+                <p className="text-sm text-[#6B7280] dark:text-gray-400 leading-relaxed line-clamp-2">
                   {project.shortDescription}
                 </p>
               </div>
 
               {/* View Details Link */}
-              <div className="pt-5 mt-4 border-t border-[#F3F4F6]">
+              <div className="pt-5 mt-4 border-t border-[#F3F4F6] dark:border-gray-800">
                 <Link
                   href={`/portfolio/${project.slug}`}
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#FF6B00] hover:text-[#FF8C42] active:translate-x-1 transition-all"
