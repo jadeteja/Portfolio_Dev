@@ -43,71 +43,45 @@ export default function Hero() {
       // Coordinated timeline for cinematic entrance on initial load
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.from('.hero-badge-pill', {
-        y: -15,
-        opacity: 0,
-        duration: 0.6,
-      })
-        .from(
+      tl.fromTo(
+        '.hero-badge-pill',
+        { y: -15, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 }
+      )
+        .fromTo(
           '.hero-headline-word',
-          {
-            y: 35,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.08,
-          },
+          { y: 35, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08 },
           '-=0.3'
         )
-        .from(
+        .fromTo(
           '.hero-subtext',
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-          },
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6 },
           '-=0.4'
         )
-        .from(
+        .fromTo(
           '.hero-action-btn',
-          {
-            scale: 0.9,
-            y: 15,
-            opacity: 0,
-            duration: 0.5,
-            stagger: 0.12,
-          },
+          { scale: 0.9, y: 15, opacity: 0 },
+          { scale: 1, y: 0, opacity: 1, duration: 0.5, stagger: 0.12 },
           '-=0.3'
         )
-        .from(
+        .fromTo(
           '.hero-highlight-card',
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.1,
-          },
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
           '-=0.2'
         )
-        .from(
+        .fromTo(
           '.hero-3d-wrapper',
-          {
-            scale: 0.88,
-            opacity: 0,
-            y: 30,
-            duration: 1.1,
-            ease: 'expo.out',
-          },
+          { scale: 0.88, opacity: 0, y: 30 },
+          { scale: 1, opacity: 1, y: 0, duration: 1.1, ease: 'expo.out' },
           '-=0.9'
         )
-        .from(
+        .fromTo(
           '.hero-float-badge',
-          {
-            scale: 0.6,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: 'back.out(1.7)',
-          },
+          { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'back.out(1.7)' },
           '-=0.4'
         );
 
@@ -175,10 +149,10 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons with Magnetic Hover feel */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
+            <div className="relative z-20 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 href="/contact"
-                className="hero-action-btn group relative flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-bold text-base shadow-lg shadow-[#FF6B00]/25 hover:shadow-xl hover:shadow-[#FF6B00]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-98 transition-all overflow-hidden"
+                className="hero-action-btn group relative flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C42] text-white font-bold text-base shadow-lg shadow-[#FF6B00]/25 hover:shadow-xl hover:shadow-[#FF6B00]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-98 transition-all overflow-hidden cursor-pointer pointer-events-auto"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Start Your Project
@@ -188,7 +162,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="hero-action-btn flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white dark:bg-gray-900 border-2 border-[#E5E7EB] dark:border-gray-800 text-[#1F2937] dark:text-gray-200 font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] hover:-translate-y-0.5 active:translate-y-0 active:scale-98 transition-all"
+                className="hero-action-btn flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white dark:bg-gray-900 border-2 border-[#E5E7EB] dark:border-gray-800 text-[#1F2937] dark:text-gray-200 font-bold text-base hover:border-[#FF6B00] hover:text-[#FF6B00] hover:-translate-y-0.5 active:translate-y-0 active:scale-98 transition-all cursor-pointer pointer-events-auto shadow-sm"
               >
                 View My Work
               </Link>
