@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from '@/components/home/Hero';
+import HomeClient from '@/components/home/HomeClient';
 
 export const metadata = {
   title: 'JADE TEJA — Freelance Web & Android App Developer',
@@ -8,9 +8,5 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+  return <HomeClient />;
 }
