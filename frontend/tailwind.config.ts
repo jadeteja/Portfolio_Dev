@@ -27,9 +27,28 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-redaction)", "'Redaction 10'", "serif"],
-        redaction: ["var(--font-redaction)", "'Redaction 10'", "serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        sans: [
+          "var(--font-sans)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "'Segoe UI'",
+          "Roboto",
+          "sans-serif",
+        ],
+        mono: [
+          "var(--font-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "monospace",
+        ],
+        code: [
+          "var(--font-code)",
+          "var(--font-mono)",
+          "monospace",
+        ],
       },
       boxShadow: {
         subtle: "0 2px 10px rgba(0, 0, 0, 0.04)",

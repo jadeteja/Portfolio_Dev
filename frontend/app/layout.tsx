@@ -1,10 +1,32 @@
 import type { Metadata, Viewport } from 'next';
+import { JetBrains_Mono, Plus_Jakarta_Sans, Fira_Code } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 import InteractiveTouchCursor from '@/components/3d/InteractiveTouchCursor';
+
+const jakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-code',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   themeColor: '#FF6B00',
@@ -68,12 +90,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Redaction+10:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-      </head>
+    <html
+      lang="en"
+      className={`${jakartaSans.variable} ${jetbrainsMono.variable} ${firaCode.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased bg-white dark:bg-gray-950 text-[#1F2937] dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <a
