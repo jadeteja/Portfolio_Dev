@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Redaction+10:ital,wght@0,400;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-poppins: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-redaction: 'Redaction 10', serif;
+  --font-poppins: 'Redaction 10', serif;
   --brand-orange: #FF6B00;
   --brand-secondary: #FF8C42;
   --brand-light: #FFF3E8;
@@ -15,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-poppins);
+  font-family: var(--font-redaction);
   color: var(--brand-dark);
   background-color: #FFFFFF;
 }
@@ -125,4 +128,23 @@ body {
 
 .animate-ping-once {
   animation: ping-once 0.65s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+
+.redaction-10-regular {
+  font-family: "Redaction 10", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.redaction-10-bold {
+  font-family: "Redaction 10", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.redaction-10-regular-italic {
+  font-family: "Redaction 10", serif;
+  font-weight: 400;
+  font-style: italic;
 }

@@ -1,18 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 import InteractiveTouchCursor from '@/components/3d/InteractiveTouchCursor';
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   themeColor: '#FF6B00',
@@ -76,7 +68,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Redaction+10:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+      </head>
       <body className="font-sans antialiased bg-white dark:bg-gray-950 text-[#1F2937] dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <a

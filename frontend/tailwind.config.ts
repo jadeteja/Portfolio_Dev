@@ -27,7 +27,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        sans: ["var(--font-redaction)", "'Redaction 10'", "serif"],
+        redaction: ["var(--font-redaction)", "'Redaction 10'", "serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
